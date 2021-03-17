@@ -1,4 +1,7 @@
-package com.epam;
+package com;
+
+import com.application.CoronaDisinfector;
+import com.application.Room;
 
 /* eserbaniuc created on 02/19/2021 */
 public class Main {

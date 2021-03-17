@@ -1,4 +1,4 @@
-package com.epam;
+package com.policeman;
 
 /* eserbaniuc created on 02/19/2021 */
 public interface Policeman {
