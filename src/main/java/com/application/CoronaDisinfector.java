@@ -1,14 +1,16 @@
 package com.application;
 
+import com.annotations.InjectByType;
 import com.announcer.Announcer;
-import com.factory.ObjectFactory;
 import com.policeman.Policeman;
 
 /* eserbaniuc created on 02/19/2021 */
 public class CoronaDisinfector {
 
-    private Announcer announcer = ObjectFactory.getInstance().createObject(Announcer.class);
-    private Policeman policeman = ObjectFactory.getInstance().createObject(Policeman.class);
+    @InjectByType
+    private Announcer announcer;
+    @InjectByType
+    private Policeman policeman;
 
     public void start(Room room){
         System.out.println("=================Start=========================");
