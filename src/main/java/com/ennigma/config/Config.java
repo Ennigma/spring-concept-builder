@@ -1,4 +1,4 @@
-package com.config;
+package com.ennigma.config;
 
 import org.reflections.Reflections;
 

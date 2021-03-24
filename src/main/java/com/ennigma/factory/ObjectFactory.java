@@ -1,4 +1,4 @@
-package com.factory;
+package com.ennigma.factory;
 
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
@@ -6,11 +6,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.config.Config;
-import com.config.JavaConfig;
-import com.factory.configurator.ObjectConfigurator;
-import com.policeman.Policeman;
-import com.policeman.Robocop;
+import com.ennigma.config.Config;
+import com.ennigma.config.JavaConfig;
+import com.ennigma.factory.configurator.ObjectConfigurator;
+import com.ennigma.policeman.Policeman;
+import com.ennigma.policeman.Robocop;
 
 import lombok.SneakyThrows;
 

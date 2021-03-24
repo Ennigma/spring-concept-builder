@@ -1,4 +1,4 @@
-package com.config;
+package com.ennigma.config;
 
 import java.util.Map;
 import java.util.Set;

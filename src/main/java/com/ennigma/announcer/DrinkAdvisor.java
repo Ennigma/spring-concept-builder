@@ -1,6 +1,6 @@
-package com.announcer;
+package com.ennigma.announcer;
 
-import com.annotations.InjectProperty;
+import com.ennigma.annotations.InjectProperty;
 
 /* eserbaniuc created on 02/26/2021 */
 public class DrinkAdvisor implements Advisor {

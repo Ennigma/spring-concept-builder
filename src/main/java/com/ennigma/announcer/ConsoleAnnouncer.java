@@ -1,6 +1,6 @@
-package com.announcer;
+package com.ennigma.announcer;
 
-import com.factory.ObjectFactory;
+import com.ennigma.factory.ObjectFactory;
 
 /* eserbaniuc created on 02/19/2021 */
 public class ConsoleAnnouncer implements Announcer {

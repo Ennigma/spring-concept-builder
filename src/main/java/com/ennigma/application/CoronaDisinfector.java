@@ -1,8 +1,8 @@
-package com.application;
+package com.ennigma.application;
 
-import com.annotations.InjectByType;
-import com.announcer.Announcer;
-import com.policeman.Policeman;
+import com.ennigma.annotations.InjectByType;
+import com.ennigma.announcer.Announcer;
+import com.ennigma.policeman.Policeman;
 
 /* eserbaniuc created on 02/19/2021 */
 public class CoronaDisinfector {

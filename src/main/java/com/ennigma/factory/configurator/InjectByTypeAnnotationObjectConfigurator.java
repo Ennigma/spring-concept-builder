@@ -1,9 +1,9 @@
-package com.factory.configurator;
+package com.ennigma.factory.configurator;
 
 import java.lang.reflect.Field;
 
-import com.annotations.InjectByType;
-import com.factory.ObjectFactory;
+import com.ennigma.annotations.InjectByType;
+import com.ennigma.factory.ObjectFactory;
 
 import lombok.SneakyThrows;
 

@@ -1,10 +1,9 @@
-package com.annotations;
+package com.ennigma.annotations;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 @Retention(RetentionPolicy.RUNTIME)
-public @interface InjectProperty {
+public @interface InjectByType {
 
-    String value() default "";
 }
