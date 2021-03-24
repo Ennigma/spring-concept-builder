@@ -1,10 +1,11 @@
 package com.ennigma.announcer;
 
-import com.ennigma.factory.ObjectFactory;
+import com.ennigma.annotations.InjectByType;
 
 /* eserbaniuc created on 02/19/2021 */
 public class ConsoleAnnouncer implements Announcer {
-    private Advisor advisor = ObjectFactory.getInstance().createObject(Advisor.class);
+    @InjectByType
+    private Advisor advisor;
 
     @Override
     public void announce(String message) {

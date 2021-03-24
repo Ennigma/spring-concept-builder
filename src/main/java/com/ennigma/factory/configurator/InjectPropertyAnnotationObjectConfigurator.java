@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import com.ennigma.annotations.InjectProperty;
+import com.ennigma.application.ApplicationContext;
 
 import lombok.SneakyThrows;
 
@@ -28,7 +29,7 @@ public class InjectPropertyAnnotationObjectConfigurator implements ObjectConfigu
 
     @SneakyThrows
     @Override
-    public void configure(Object t) {
+    public void configure(ApplicationContext context, Object t) {
         Class<?> implClass = t.getClass();
         for (Field field : implClass.getDeclaredFields()) {
             InjectProperty annotation = field.getAnnotation(InjectProperty.class);
