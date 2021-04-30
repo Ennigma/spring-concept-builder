@@ -11,7 +11,7 @@ import com.ennigma.application.ApplicationContext;
 
 import lombok.SneakyThrows;
 
-/* eserbaniuc created on 03/08/2021 */
+/* ennigma created on 03/08/2021 */
 public class InjectPropertyAnnotationObjectConfigurator implements ObjectConfigurator {
 
     private final Map<String, String> propertiesMap;

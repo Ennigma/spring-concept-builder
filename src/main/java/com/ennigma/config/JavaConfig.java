@@ -13,7 +13,7 @@ import com.ennigma.annotations.Singleton;
 
 import lombok.Getter;
 
-/* eserbaniuc created on 02/19/2021 */
+/* ennigma created on 02/19/2021 */
 public class JavaConfig implements Config {
 
     @Getter

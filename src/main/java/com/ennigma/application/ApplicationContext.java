@@ -10,7 +10,7 @@ import com.ennigma.annotations.Singleton;
 import lombok.Getter;
 import lombok.Setter;
 
-/* eserbaniuc created on 03/19/2021 */
+/* ennigma created on 03/19/2021 */
 public class ApplicationContext {
     @Setter
     private ObjectFactory factory;
@@ -23,14 +23,15 @@ public class ApplicationContext {
     }
 
     public <T> T getObject(Class<T> type){
-        if (cache.containsKey(type)){
-            return (T) cache.get(type);
-        }
-
         Class<? extends T> implClass = type;
         if (type.isInterface()){
             implClass = config.getImplClass(type);
         }
+
+        if (cache.containsKey(implClass)){
+            return (T) cache.get(implClass);
+        }
+
         T t = factory.createObject(implClass);
 
         if (implClass.isAnnotationPresent(Singleton.class)){

@@ -3,23 +3,28 @@ package com.ennigma.policeman;
 import javax.annotation.PostConstruct;
 
 import com.ennigma.annotations.InjectByType;
+import com.ennigma.annotations.Primary;
 import com.ennigma.annotations.Singleton;
-import com.ennigma.announcer.DrinkAdvisor;
+import com.ennigma.announcer.Advisor;
 
-/* eserbaniuc created on 02/19/2021 */
+import lombok.extern.log4j.Log4j;
+
+/* ennigma created on 02/19/2021 */
 @Singleton
-public class Robocop implements Policeman {
+@Primary
+@Log4j
+public class Robocop implements Hero {
 
     @InjectByType
-    private DrinkAdvisor advisor;
+    private Advisor advisor;
 
     @PostConstruct
     public void init(){
-        System.out.println("PostConstruct concept: " + advisor.getClass());
+        log.info("PostConstruct concept: INIT method invoked in class: " + getClass());
     }
 
     @Override
     public void makePeopleLeaveRoom() {
-        System.out.println("Robocop: Pif Paf!!! Leave the room like NOW!!!");
+        log.info("Robocop: Pif Paf!!! Leave the room like NOW!!!");
     }
 }

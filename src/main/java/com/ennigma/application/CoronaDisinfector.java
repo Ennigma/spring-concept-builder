@@ -2,28 +2,32 @@ package com.ennigma.application;
 
 import com.ennigma.annotations.InjectByType;
 import com.ennigma.announcer.Announcer;
-import com.ennigma.policeman.Policeman;
+import com.ennigma.policeman.Hero;
 
-/* eserbaniuc created on 02/19/2021 */
+import lombok.extern.log4j.Log4j;
+
+/* ennigma created on 02/19/2021 */
+@Log4j
+@Deprecated
 public class CoronaDisinfector {
 
     @InjectByType
     private Announcer announcer;
     @InjectByType
-    private Policeman policeman;
+    private Hero hero;
 
-    public void start(Room room){
-        System.out.println("=================Start=========================");
+    public void start(){
+        log.info("=================Start=========================");
 
         announcer.announce("Disinfection starts soon, please leave the room");
-        policeman.makePeopleLeaveRoom();
-        disinfectRoom(room);
+        hero.makePeopleLeaveRoom();
+        disinfectRoom();
         announcer.announce("Disinfection successfully completed. You are now allow to enter the room!");
 
-        System.out.println("=================End=========================");
+        log.info("=================End=========================");
     }
 
-    private void disinfectRoom(Room room) {
-        System.out.println("Disinfection successfully completed!");
+    private void disinfectRoom() {
+        log.info("Disinfection successfully completed!");
     }
 }

@@ -7,7 +7,7 @@ import com.ennigma.application.ApplicationContext;
 
 import lombok.SneakyThrows;
 
-/* eserbaniuc created on 03/19/2021 */
+/* ennigma created on 03/19/2021 */
 public class InjectByTypeAnnotationObjectConfigurator implements ObjectConfigurator {
 
     @SneakyThrows

@@ -6,7 +6,7 @@ import com.ennigma.annotations.Lazy;
 import com.ennigma.config.JavaConfig;
 import com.ennigma.factory.ObjectFactory;
 
-/* eserbaniuc created on 03/24/2021 */
+/* ennigma created on 03/24/2021 */
 public class Application {
 
     public static ApplicationContext run(String packageToScan){

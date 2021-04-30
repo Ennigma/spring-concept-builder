@@ -10,14 +10,16 @@ import javax.annotation.PostConstruct;
 
 import com.ennigma.application.ApplicationContext;
 import com.ennigma.config.Config;
+import com.ennigma.config.ProxyConfigurator;
 import com.ennigma.factory.configurator.ObjectConfigurator;
 
 import lombok.SneakyThrows;
 
-/* eserbaniuc created on 02/19/2021 */
+/* ennigma created on 02/19/2021 */
 public class ObjectFactory {
     private final ApplicationContext context;
     private List<ObjectConfigurator> configurators = new ArrayList<>();
+    private List<ProxyConfigurator> proxyConfigurators = new ArrayList<>();
 
     @SneakyThrows
     public ObjectFactory(ApplicationContext context) {
@@ -29,14 +31,30 @@ public class ObjectFactory {
             }
             configurators.add(aclass.getDeclaredConstructor().newInstance());
         }
+
+        for (Class<? extends ProxyConfigurator> aclass : config.getScanner().getSubTypesOf(ProxyConfigurator.class)) {
+            if (Modifier.isAbstract(aclass.getModifiers())){
+                return;
+            }
+            proxyConfigurators.add(aclass.getDeclaredConstructor().newInstance());
+        }
     }
 
     @SneakyThrows
     public <T> T createObject(Class<T> implClass) {
         T t = create(implClass);
         configure(t);
-
         invokeInit(implClass, t);
+
+        t = wrapWithProxyIfRequired(t);
+
+        return t;
+    }
+
+    private <T> T wrapWithProxyIfRequired(T t) {
+        for (ProxyConfigurator proxyConfigurator : proxyConfigurators) {
+            t = (T) proxyConfigurator.replaceWithProxyIfRequired(t, t.getClass());
+        }
         return t;
     }
 

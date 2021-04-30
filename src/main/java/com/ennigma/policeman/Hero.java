@@ -1,8 +1,8 @@
 package com.ennigma.policeman;
 
-/* eserbaniuc created on 02/19/2021 */
+/* ennigma created on 02/19/2021 */
 @FunctionalInterface
-public interface Policeman {
+public interface Hero {
 
     void makePeopleLeaveRoom();
 }
